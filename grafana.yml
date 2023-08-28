@@ -1,0 +1,17 @@
+# grafana.yaml
+
+adminUser: admin
+adminPassword: admin
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-server.prometheus.svc.cluster.local   # Replace with your Prometheus server Cluster IP & Port
+        access: proxy
+        isDefault: true
+
+persistence:
+  enabled: true
